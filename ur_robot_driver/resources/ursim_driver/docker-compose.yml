@@ -24,7 +24,7 @@ services:
    image: ursim_img
    privileged: true
    environment:
-    - ROBOT_MODEL=UR5
+    - ROBOT_MODEL=UR10e
     - DISPLAY=:1
    networks:
     static_test_net:

@@ -36,7 +36,7 @@ ENV TZ "Europe/Copenhagen"
 ENV HOME /ursim
 
 # Set robot model - Can be UR3, UR5 or UR10
-ENV ROBOT_MODEL UR5
+ENV ROBOT_MODEL UR10e
 
 # Set display
 ENV DISPLAY :1
