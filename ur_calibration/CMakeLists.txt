@@ -70,8 +70,9 @@ install(DIRECTORY launch
         DESTINATION share/${PROJECT_NAME}
 )
 
+set(LOCAL_ENABLE_TESTING False)
 ## Add gtest based cpp test target and link libraries
-if(BUILD_TESTING)
+if(BUILD_TESTING AND ${LOCAL_ENABLE_TESTING})
   find_package(ament_cmake_gmock REQUIRED)
 
   # Get the first item (it will be the build space version of the build path).

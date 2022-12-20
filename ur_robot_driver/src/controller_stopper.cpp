@@ -110,7 +110,7 @@ void ControllerStopper::findAndStopControllers()
 
   // Callback to switch controllers
   auto callback_switch_controller =
-      [this](rclcpp::Client<controller_manager_msgs::srv::SwitchController>::SharedFuture future_response) {
+      [](rclcpp::Client<controller_manager_msgs::srv::SwitchController>::SharedFuture future_response) {
         auto result = future_response.get();
         if (result->ok == false) {
           RCLCPP_ERROR(rclcpp::get_logger("Controller stopper"), "Could not deactivate requested controllers");
@@ -147,7 +147,7 @@ void ControllerStopper::findAndStopControllers()
 void ControllerStopper::startControllers()
 {
   // Callback to switch controllers
-  auto callback = [this](rclcpp::Client<controller_manager_msgs::srv::SwitchController>::SharedFuture future_response) {
+  auto callback = [](rclcpp::Client<controller_manager_msgs::srv::SwitchController>::SharedFuture future_response) {
     auto result = future_response.get();
     if (result->ok == false) {
       RCLCPP_ERROR(rclcpp::get_logger("Controller stopper"), "Could not activate requested controllers");

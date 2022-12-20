@@ -159,20 +159,3 @@ install(DIRECTORY config launch
 
 ament_package()
 
-if(BUILD_TESTING)
-  find_package(ur_controllers REQUIRED)
-  find_package(ur_description REQUIRED)
-  find_package(ur_msgs REQUIRED)
-  find_package(launch_testing_ament_cmake)
-
-  if(${UR_ROBOT_DRIVER_BUILD_INTEGRATION_TESTS})
-    add_launch_test(test/dashboard_client.py
-      TIMEOUT
-        180
-    )
-    add_launch_test(test/robot_driver.py
-      TIMEOUT
-        500
-    )
-  endif()
-endif()
